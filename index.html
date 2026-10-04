@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sufyan Mart - Sheet</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; }
+    header { background: #008080; padding: 16px; }
+    header h1 { color: white; margin: 0; }
+    main { padding: 16px; }
+    table { border-collapse: collapse; }
+    th, td { border: 1px solid #333; padding: 6px 12px; }
+    footer { padding: 16px; border-top: 1px solid #999; margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sufyan Mart</h1>
+  </header>
+
+  <main>
+    <table id="sheet">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Line</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </main>
+
+  <footer>
+    Roll: 247237
+  </footer>
+
+  <script>
+    // All rows live in this one array. It starts empty.
+    // Each row will be one object.
+    const rows = [];
+  </script>
+</body>
+</html>
