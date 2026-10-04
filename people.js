@@ -1,4 +1,4 @@
-const people = [];
+const people = [{ name: "Guest" }];
 
 function draw() {
   const tbody = document.getElementById("people");
