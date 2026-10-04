@@ -16,6 +16,33 @@ function draw() {
     tbody.appendChild(tr);
   }
 }
+function showSummary() {
+  let total = 0;
+  for (const row of rows) {
+    // NaN still counts as a number type, so it needs its own check
+    if (typeof row.line === "number" && !Number.isNaN(row.line)) {
+      total += row.line;
+    }
+  }
+
+  document.getElementById("total").textContent = "Total: " + total;
+  document.getElementById("totalKind").textContent = "Kind of total: " + typeof total;
+
+  // The row just added is the last one in the array
+  const last = rows[rows.length - 1];
+  const priceAsNumber = Number(last.price);
+
+  document.getElementById("noteKind").textContent =
+    "Kind of the Note on the row just added: " + typeof last.note;
+  document.getElementById("priceMatch").textContent =
+    "Price text matches price as a number (==): " + (last.price == priceAsNumber);
+  document.getElementById("sameKind").textContent =
+    "Same kind (===): " + (last.price === priceAsNumber);
+
+  // Only shown when the Line is NaN
+  document.getElementById("lineKind").textContent =
+    Number.isNaN(last.line) ? "Kind of that Line: " + typeof last.line : "";
+}
 
 document.getElementById("addBtn").addEventListener("click", function () {
   const itemBox = document.getElementById("item");
@@ -33,8 +60,9 @@ document.getElementById("addBtn").addEventListener("click", function () {
   row.line = row.quantity * row.price;   // the Line is quantity times price
   row.note = row.price + row.quantity;   // the price as text, with the quantity written on the end
 
-  rows.push(row);   // put the object on the end of the array
+    rows.push(row);   // put the object on the end of the array
   draw();           // draw the table again from the array
+  showSummary();    // total and kinds          // draw the table again from the array
 
   // Empty the three boxes
   itemBox.value = "";
