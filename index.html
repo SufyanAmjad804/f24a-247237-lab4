@@ -3,15 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Sufyan Mart - Sheet</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; }
-    header { background: #008080; padding: 16px; }
-    header h1 { color: white; margin: 0; }
-    main { padding: 16px; }
-    table { border-collapse: collapse; }
-    th, td { border: 1px solid #333; padding: 6px 12px; }
-    footer { padding: 16px; border-top: 1px solid #999; margin-top: 24px; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -31,16 +23,19 @@
       </thead>
       <tbody id="rows"></tbody>
     </table>
+
+    <form id="addForm" onsubmit="return false;">
+      <label>Item <input type="text" id="item"></label>
+      <label>Quantity <input type="text" id="quantity"></label>
+      <label>Price <input type="text" id="price"></label>
+      <button type="button" id="addBtn">Add</button>
+    </form>
   </main>
 
   <footer>
     Roll: 247237
   </footer>
 
-  <script>
-    // All rows live in this one array. It starts empty.
-    // Each row will be one object.
-    const rows = [];
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
