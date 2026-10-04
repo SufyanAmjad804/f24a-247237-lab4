@@ -23,11 +23,13 @@ document.getElementById("addBtn").addEventListener("click", function () {
   const priceBox = document.getElementById("price");
 
   // One object for this row
-  const row = {
-    item: itemBox.value,
-    quantity: quantityBox.value,
-    price: priceBox.value
-  };
+    // One object for this row
+  const row = {};
+  if (itemBox.value !== "") {
+    row.item = itemBox.value;   // an empty box means the object has no item at all
+  }
+  row.quantity = quantityBox.value;
+  row.price = priceBox.value;
   row.line = row.quantity * row.price;   // the Line is quantity times price
   row.note = row.price + row.quantity;   // the price as text, with the quantity written on the end
 
