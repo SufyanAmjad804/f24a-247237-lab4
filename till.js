@@ -1,6 +1,7 @@
 document.getElementById("takeBtn").addEventListener("click", function () {
   const bill = Number(document.getElementById("bill").value);
-  const paid = Number(document.getElementById("paid").value);
+    const paidText = document.getElementById("paid").value;
+  const paid = paidText === "" ? null : Number(paidText);   // empty box stores null
 
   const change = getChange(bill, paid);   // the call sits above the function
 
@@ -8,6 +9,9 @@ document.getElementById("takeBtn").addEventListener("click", function () {
   result.innerHTML = "";
 
   const lines = ["Change: " + change];
+    if (paid === null) {
+    lines.push("Kind of paid: " + typeof paid);
+  }
 
   if (bill > paid) {
     lines.push("Still owed: " + (bill - paid));
