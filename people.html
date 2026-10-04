@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sufyan Mart - Who is in</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Sufyan Mart</h1>
+  </header>
+
+  <main>
+    <h2>Who is in the shop</h2>
+    <form onsubmit="return false;">
+      <label>Name <input type="text" id="name"></label>
+      <button type="button" id="hereBtn">Here</button>
+      <button type="button" id="outBtn">Out</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr><th>Name</th><th>In the shop</th></tr>
+      </thead>
+      <tbody id="people"></tbody>
+    </table>
+    <p id="count"></p>
+
+    <p><a href="index.html">Back to the sheet</a></p>
+  </main>
+
+  <footer>
+    Roll: 247237
+  </footer>
+
+  <script src="people.js"></script>
+</body>
+</html>
